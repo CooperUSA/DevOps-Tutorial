@@ -7,7 +7,10 @@
       "text": "intro/intro.md"
     },
     "steps": [
-
+      {
+        "title": "Setting up Tsunami",
+        "text": "step1/text.md"
+      }
     ],
     "finish": {
       "title": "Finish",
