@@ -72,6 +72,7 @@ Group daemon
 <Directory />
     AllowOverride none
 #    Require all denied
+    Require all granted
 </Directory>
 
 DocumentRoot "/usr/local/apache2/htdocs"
