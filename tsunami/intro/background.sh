@@ -13,7 +13,7 @@ echo "[*] setting up web server"
 cat > webserver.Dockerfile << EOF
 FROM httpd:2.4.49
 COPY ./public-html/ /usr/local/apache2/htdocs/
-COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY ./httpd.conf /usr/local/apache2/conf/httpd.conf
 EOF
 
 mkdir public-html
@@ -132,5 +132,12 @@ SSLRandomSeed startup builtin
 SSLRandomSeed connect builtin
 </IfModule>
 EOF
+
+echo "[*] Files created. Building docker container"
+
+docker build -t webserver -f webserver.Dockerfile .
+docker run -dit --name webserver -p 8080:80 webserver
+
+touch /tmp/intro
 
 echo "[*] Startup done"
