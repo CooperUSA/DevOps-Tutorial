@@ -1,0 +1,20 @@
+{
+  "title":"Using Tsunami to discover vulnerable applications",
+  "description" : "This tutorial will introduce Google's Tsunami through a KillerCoda tutorial, show how it can be set up and used to scan an endpoint for advanced vulnerabilities.",
+  "details": {
+    "intro": {
+      "title" : "Intro",
+      "text": "intro/intro.md"
+    },
+    "steps": [
+
+    ],
+    "finish": {
+      "title": "Finish",
+      "text": "finish/finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
