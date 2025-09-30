@@ -6,7 +6,7 @@ In this guide, however, we’ll focus only on the following plugins:
 - [web_app_fingerprinter](https://github.com/google/tsunami-security-scanner-plugins/tree/master/google/fingerprinters/web)
 - [apache_http_server_cve_2021_41773](https://github.com/google/tsunami-security-scanner-plugins/tree/master/community/detectors/apache_http_server_cve_2021_41773).
 
----
+###
 
 First, pull the latest Tsunami Docker image by running this code:
 
@@ -17,8 +17,12 @@ docker pull ghcr.io/google/tsunami-scanner-full
 Next, start a new container using that image:
 
 ```bash
-docker run -it --rm ghcr.io/google/tsunami-scanner-full bash
+docker run -it --rm ghcr.io/google/tsunami-scanner-full \ 
+bash -c "apt-get update && apt-get install -y nmap && bash"
 ```{{exec}}
+(Since the image doesn't have nmap, we also install it inside the container)
+
+###
 
 Once inside the container, we can run Tsunami against our local network.  
 In this tutorial, we’ll scan only **port 8080**, since that’s the only service we’re interested in:
