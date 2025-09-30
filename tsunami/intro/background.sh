@@ -9,10 +9,10 @@ if ! systemctl is-active --quiet docker; then
 
 # Setup the vulnerable web server (automatically)
 
-cat <<EOT > webserver.dockerfile
+cat > webserver.dockerfile <<EOF
 FROM httpd:2.4.49
 COPY ./public-html/ /usr/local/apache2/htdocs/
 COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf" > webserver.Dockerfile
-EOT
+EOF
 
 echo "[*] Startup done"
