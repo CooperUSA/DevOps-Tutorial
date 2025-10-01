@@ -9,7 +9,7 @@ cat webserver.Dockerfile
 To then update the server we can simply replace the version to 2.4, this will provide us with the latest release of httpd 2.4 as opposed to specifically 2.4.49. You can either make this change manually with your favourite text editor, or for the sake of automation we can run the command below:
 
 ```bash
-sed 's/2.4.49/2.4/' webserver.Dockerfile
+sed -i 's/2.4.49/2.4/' webserver.Dockerfile
 ```{{exec}}
 
 Now that we have changed the Dockerfile, we want to actually make sure the server is updated, for this we'll simply kill and restart the server. No need for anything fancy.
@@ -20,3 +20,11 @@ docker remove webserver
 docker build -t webserver -f webserver.Dockerfile .
 docker run -dit --name webserver -p 8080:80 webserver
 ```{{exec}}
+
+Remember the manual exploit command we executed previously? Well, if we now run it again, we will find that we do not get out the entire `/etc/passwd` file of the docker container.
+
+```bash
+curl http://localhost:8080/cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/etc/passwd
+```{{exec}}
+
+Instead we get a HTTP 400 Bad Request response, showing that despite not altering any configuration of the webserver itself, the exploit no longer works.
