@@ -16,7 +16,7 @@ docker pull ghcr.io/google/tsunami-scanner-full
 
 ### Start a container   
 
-Next, we want to start a container from that image and name it `tsunami`{{}}:
+Next, we want to start a container from that image and name it `tsunami-con`{{}}:
 
 ```bash
 docker run -dit --name tsunami-con ghcr.io/google/tsunami-scanner-full
