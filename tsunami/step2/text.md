@@ -28,6 +28,13 @@ The container doesn't have `nmap`{{}}. So for us to be able to scan ports with T
 docker exec tsunami-con bash -c "apt-get update && apt-get install -y nmap"
 ```{{exec}}
 
+Now you should have the Tsunami container up and running. To check your Docker containers you can use the command:
+
+```bash
+docker ps
+```{{exec}}
+
+You should see two containers, `tsunami-con`{{}} and `webserver`{{}}.
 
  [docker run -d ghcr.io/google/tsunami-scanner-full bash -c "apt-get update && apt-get install -y nmap && tail -f /dev/null"]: #
 
