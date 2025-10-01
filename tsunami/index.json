@@ -10,8 +10,16 @@
     },
     "steps": [
       {
-        "title": "Setting up Tsunami",
+        "title": "Exploring the vulnerability",
         "text": "step1/text.md"
+      },
+      {
+        "title": "Setting up Tsunami",
+        "text": "step2/text.md"
+      },
+      {
+        "title": "Running tsunami",
+        "text": "step3/text.md"
       }
     ],
     "finish": {
