@@ -1,6 +1,6 @@
 # Setting up Tsunami 
 
-To use Tsunami, we’ll take advantage of the official **Tsunami Docker image** (the `tsunami-scanner-full` image), which provides a ready-to-use build of the scanner, the callback server used to confirm out-of-band exploits, and a large set of plugins.
+To use Tsunami, we’ll take advantage of the official **Tsunami Docker image** (the `tsunami-scanner-full`{{}} image), which provides a ready-to-use build of the scanner, the callback server used to confirm out-of-band exploits, and a large set of plugins.
 In this guide, however, we’ll focus only on the following plugins:
 - [nmap_port_scanner](https://github.com/google/tsunami-security-scanner-plugins/tree/master/google/portscan/nmap)
 - [web_app_fingerprinter](https://github.com/google/tsunami-security-scanner-plugins/tree/master/google/fingerprinters/web)
@@ -28,13 +28,15 @@ The container doesn't have `nmap`{{}}. So for us to be able to scan ports with T
 docker exec tsunami-con bash -c "apt-get update && apt-get install -y nmap"
 ```{{exec}}
 
+### Ensure Containers are Running
+
 Now you should have the Tsunami container up and running. To check your Docker containers you can use the command:
 
 ```bash
 docker ps
 ```{{exec}}
 
-You should see two containers, `tsunami-con`{{}} and `webserver`{{}}.
+You should see two containers, `tsunami-con`{{}} for Tsunami and `webserver`{{}} for the web server.
 
  [docker run -d ghcr.io/google/tsunami-scanner-full bash -c "apt-get update && apt-get install -y nmap && tail -f /dev/null"]: #
 
