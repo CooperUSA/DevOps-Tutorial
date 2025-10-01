@@ -20,6 +20,18 @@
       {
         "title": "Running tsunami",
         "text": "step3/text.md"
+      },
+      {
+        "title": "Updating to a non-vulnerable version of the server",
+        "text": "step4/text.md"
+      },
+      {
+        "title": "Check the vulnerability again",
+        "text": "step5/text.md"
+      },
+      {
+        "title": "Integration with CI/CD",
+        "text": "step6/text.md"
       }
     ],
     "finish": {
