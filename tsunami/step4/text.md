@@ -1,6 +1,6 @@
 Now that we see that we can detect the vulnerability, we must also convince ourselves that if we fix the vulnerability, we can no longer detect it (because it's gone). 
 
-Fixing this vulnerability simply involves updating the server to a newer version. The web server is defined within the `webserver.Dockerfile` file in the root directory.
+Fixing this vulnerability simply involves updating the server to a newer version. The web server is defined within the `webserver.Dockerfile`{{}} file in the root directory.
 
 ```bash
 cat webserver.Dockerfile
@@ -21,7 +21,7 @@ docker build -t webserver -f webserver.Dockerfile .
 docker run -dit --name webserver -p 8080:80 webserver
 ```{{exec}}
 
-Remember the manual exploit command we executed previously? Well, if we now run it again, we will find that we do not get out the entire `/etc/passwd` file of the docker container.
+Remember the manual exploit command we executed previously? Well, if we now run it again, we will find that we do not get out the entire `/etc/passwd`{{}} file of the docker container.
 
 ```bash
 curl http://localhost:8080/cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/etc/passwd
