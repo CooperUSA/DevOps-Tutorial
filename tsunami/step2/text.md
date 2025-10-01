@@ -1,34 +1,34 @@
 # Setting up Tsunami 
 
-To use Tsunami, we’ll take advantage of the official **Tsunami Docker image**, which provides a ready-to-use build of the tool. Using the official image ensures we have access to all available plugins.
+To use Tsunami, we’ll take advantage of the official **Tsunami Docker image** (the `tsunami-scanner-full` image), which provides a ready-to-use build of the scanner, the callback server used to confirm out-of-band exploits, and a large set of plugins.
 In this guide, however, we’ll focus only on the following plugins:
 - [nmap_port_scanner](https://github.com/google/tsunami-security-scanner-plugins/tree/master/google/portscan/nmap)
 - [web_app_fingerprinter](https://github.com/google/tsunami-security-scanner-plugins/tree/master/google/fingerprinters/web)
 - [apache_http_server_cve_2021_41773](https://github.com/google/tsunami-security-scanner-plugins/tree/master/community/detectors/apache_http_server_cve_2021_41773).
 
-###
-
-First, pull the latest Tsunami Docker image by running this code:
+### Pull the Tsunami image
+ 
+First, we want to pull the full image from GitHub Container Registry:
 
 ```bash
 docker pull ghcr.io/google/tsunami-scanner-full
 ```{{exec}}
 
-Next, start a new container using that image:
+### Start a container
+
+Next, we want to start a container from that image and name it `tsunami`:
 
 ```bash
-docker run -it --rm ghcr.io/google/tsunami-scanner-full bash -c "apt-get update && apt-get install -y nmap && bash"
+docker run -dit --name tsunami ghcr.io/google/tsunami-scanner-full
 ```{{exec}}
-(Since the image doesn't have nmap, we also install it inside the container)
 
-###
-
-Once inside the container, we can run Tsunami against our local network.  
-In this tutorial, we’ll scan only **port 8080**, since that’s the only service we’re interested in:
+The container doesn't have `nmap`. So for us to be able to scan ports with Tsunami later we need to first install `nmap` onto the container. This can be done with:
 
 ```bash
-tsunami --ip-v4-target=172.17.0.1 --port-ranges-target=8080 --detectors-include="ApacheHttpServerCVE202141773"
+docker exec tsunami bash -c "apt-get update && apt-get install -y nmap"
 ```{{exec}}
-# tsunami --ip-v4-target=127.0.0.1 --port-ranges-target=8080
 
-In a real-world scenario, you might scan all open ports to discover unauthorized or suspicious services.  Here, we’re limiting the scan to a known legitimate service to focus on potential issues specific to it.
+
+# docker run -d ghcr.io/google/tsunami-scanner-full bash -c "apt-get update && apt-get install -y nmap && tail -f /dev/null"
+#
+# Runs the docker iamge and then with bash we run the command inside the container, then we keep it alive with "tail -f /dev/null". We might need to use "-i" aswell though
