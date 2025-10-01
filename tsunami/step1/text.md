@@ -27,7 +27,7 @@ Once inside the container, we can run Tsunami against our local network.
 In this tutorial, we’ll scan only **port 8080**, since that’s the only service we’re interested in:
 
 ```bash
-tsunami --ip-v4-target=172.17.0.1 --port-ranges-target=8080 --detectors-include="apache_http_server_cve_2021_41773"
+tsunami --ip-v4-target=172.17.0.1 --port-ranges-target=8080 --detectors-include="ApacheHttpServerCVE202141773"
 ```{{exec}}
 # tsunami --ip-v4-target=127.0.0.1 --port-ranges-target=8080
 
