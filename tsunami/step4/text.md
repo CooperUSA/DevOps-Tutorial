@@ -27,4 +27,4 @@ Remember the manual exploit command we executed previously? Well, if we now run 
 curl http://localhost:8080/cgi-bin/.%2e/.%2e/.%2e/.%2e/.%2e/etc/passwd
 ```{{exec}}
 
-Instead we get a HTTP 400 Bad Request response, showing that despite not altering any configuration of the webserver itself, the exploit no longer works.
+Instead we get a HTTP 400 Bad Request response, showing that despite not altering any configuration of the webserver itself, the exploit no longer works after we updated to a fixed version.
