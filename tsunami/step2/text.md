@@ -14,21 +14,21 @@ First, we want to pull the full image from GitHub Container Registry:
 docker pull ghcr.io/google/tsunami-scanner-full
 ```{{exec}}
 
-### Start a container
+### Start a container   
 
-Next, we want to start a container from that image and name it `tsunami`:
-
-```bash
-docker run -dit --name tsunami ghcr.io/google/tsunami-scanner-full
-```{{exec}}
-
-The container doesn't have `nmap`. So for us to be able to scan ports with Tsunami later we need to first install `nmap` onto the container. This can be done with:
+Next, we want to start a container from that image and name it `tsunami`{{}}:
 
 ```bash
-docker exec tsunami bash -c "apt-get update && apt-get install -y nmap"
+docker run -dit --name tsunami-con ghcr.io/google/tsunami-scanner-full
+```{{exec}}
+
+The container doesn't have `nmap`{{}}. So for us to be able to scan ports with Tsunami later we need to first install `nmap`{{}} onto the container. This can be done with:
+
+```bash
+docker exec tsunami-con bash -c "apt-get update && apt-get install -y nmap"
 ```{{exec}}
 
 
-# docker run -d ghcr.io/google/tsunami-scanner-full bash -c "apt-get update && apt-get install -y nmap && tail -f /dev/null"
-#
-# Runs the docker iamge and then with bash we run the command inside the container, then we keep it alive with "tail -f /dev/null". We might need to use "-i" aswell though
+ [docker run -d ghcr.io/google/tsunami-scanner-full bash -c "apt-get update && apt-get install -y nmap && tail -f /dev/null"]: #
+
+ [Runs the docker iamge and then with bash we run the command inside the container, then we keep it alive with "tail -f /dev/null". We might need to use "-i" aswell though.]: #
