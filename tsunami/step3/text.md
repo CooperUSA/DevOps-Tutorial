@@ -24,7 +24,7 @@ After Tsunami has finished scanning, we should able to see something similar to 
 MMM dd, yyyy h:mm:ss a com.google.tsunami.plugins.detectors.cve202141773.ApacheHttpServerCVE202141773VulnDetector checkUrlWithCommonDirectory
 INFO: Received vulnerable response from target http://172.17.0.1:8080/cgi-bin/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd.
 MMM dd, yyyy h:mm:ss a com.google.tsunami.plugin.PluginExecutorImpl buildSucceededResult
-INFO: ApacheHttpServerCVE202141773VulnDetector plugin execution finished in 99 (ms)
+INFO: ApacheHttpServerCVE202141773VulnDetector plugin execution finished in XX (ms)
 MMM dd, yyyy h:mm:ss a com.google.tsunami.workflow.DefaultScanningWorkflow generateScanResults
 INFO: Tsunami scanning workflow done. Generating scan results.
 MMM dd, yyyy h:mm:ss a com.google.tsunami.workflow.DefaultScanningWorkflow lambda$runAsync$0
