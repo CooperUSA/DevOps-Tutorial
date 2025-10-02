@@ -10,6 +10,10 @@
     },
     "steps": [
       {
+        "title": "Background",
+        "text": "step0/text.md"
+      },
+      {
         "title": "Exploring the vulnerability",
         "text": "step1/text.md"
       },
