@@ -10,4 +10,11 @@ We’ll then learn how to set up Tsunami and use it to scan the web server for v
 Finally, we’ll show how Tsunami can be integrated into a CI/CD pipeline to automatically run scans during builds or deployments.
 
 ## Intended Learning Outcomes
-By the end of this tutorial, you will understand how to detect and remediate web application vulnerabilities using the Tsunami Security Scanner. You will gain hands-on experience on how to configure and run Tsunami, scanning a target service for known vulnerabilities, interpreting the scan results, and verifying remediation by patching the vulnerable service. Additionally, you will learn how Tsunami can be integrated into CI/CD pipelines to enable continuous and automated security testing.
+By the end of this tutorial, you will understand how to 
+- Detect and remediate web application vulnerabilities using the Tsunami Security Scanner. 
+- Gain hands-on experience on: 
+    - How to configure and run Tsunami.
+    - Scanning a target service for known vulnerabilities. 
+    - Interpreting the scan results.
+    - Verifying remediation by patching the vulnerable service. 
+- Additionally, you will learn how Tsunami can be integrated into CI/CD pipelines to enable continuous and automated security testing.
