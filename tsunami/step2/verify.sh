@@ -5,9 +5,7 @@ if [ $( docker ps | grep tsunami-con | wc -l ) -eq 0 ]; then
 fi
 
 # Check if nmap exists inside the container 'tsunami-con'
-if docker exec tsunami-con command -v nmap >/dev/null 2>&1; then
-    echo "nmap is installed inside the container"
-else
+if [ ! -z "$(docker exec tsunami-con whereis nmap | awk '{print $2}')" ]; then
     echo "nmap is NOT installed inside the container"
     exit 1
 fi
