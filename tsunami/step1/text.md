@@ -1,6 +1,6 @@
 While on the intro page, a vulnerable apache httpd web-server was automatically set up. We will first look at this vulnerability, understand what has gone wrong, and then see if we can automatically detect it. 
 
-Within the current directory we have a few files, among which are `httpd.conf`{{}}. This configuration file is poorly configured, and with httpd version 2.4.49, that is vulnerable to CVE-2021-41773, will allow path traversal across the full filesystem running the server, in our case a docker container.
+Within the current directory we have a few files, among them is `httpd.conf`{{}}. This configuration file is poorly configured, and with httpd version 2.4.49, that is vulnerable to [CVE-2021-41773](https://www.cve.org/CVERecord?id=CVE-2021-41773), will allow path traversal across the full filesystem running the server, in our case a docker container.
 
 ```bash
 cat httpd.conf | grep "#" -C 3
