@@ -20,7 +20,8 @@
       },
       {
         "title": "Setting up Tsunami",
-        "text": "step2/text.md"
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       },
       {
         "title": "Running Tsunami",

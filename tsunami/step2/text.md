@@ -1,5 +1,3 @@
-# Setting up Tsunami 
-
 To use Tsunami, we’ll take advantage of the official **Tsunami Docker image** (the `tsunami-scanner-full`{{}} image), which provides a ready-to-use build of the scanner, the callback server used to confirm out-of-band exploits, and a large set of plugins.
 In this guide, however, we’ll focus only on the following plugins:
 - [nmap_port_scanner](https://github.com/google/tsunami-security-scanner-plugins/tree/master/google/portscan/nmap)

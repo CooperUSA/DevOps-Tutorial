@@ -1,5 +1,3 @@
-# Running Tsunami
-
 Now that we have a container, we can run Tsunami against our local network.  
 In this tutorial, we’ll only scan **port 8080**, since that’s the only service we’re interested in.
 
