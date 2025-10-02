@@ -9,4 +9,4 @@ It follows a hardcoded 2-step process when scanning a publicly exposed network e
 
 Following diagram shows the overall workflow for a Tsunami scan:
 
-![Tsunami Workflow]{./tsunami_workflow.png}
+![Tsunami Workflow](./tsunami_workflow.png)
