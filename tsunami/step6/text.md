@@ -20,72 +20,67 @@ The workflow we need to add has to do a few things:
 4. Configure tsunami
 5. Run tsunami against the web server, and detect within the output if there are any vulnerabilities
 
-We can see that a basic skeleton of the workflow is already present, with a name, and is set to trigger on pushing to main. This can be changed so that the action is run more often or in different circumstances if desired.
+The file `tsunami.yml`{{}} has been automatically created and will do the steps above, we can explore it by running:
+
+```bash
+cat tsunami.yml
+```{{exec}}
+
+We will now break the file down piece by piece.
 
 ## Download tsunami
 
-To make the action download tsunami, we add it as a service container. This will include the container within the current job. We do this using the code below. Click on it to add it to the workflow.
+To make the runner download tsunami, we add it as a service container. This will include the container within the current job. We do this using the code below.
 
-```bash
-cat >> tsunami.yml << EOF
+```yml
     services:
       tsunami:
         image: ghcr.io/google/tsunami-scanner-full:latest
-
-EOF
-```{{exec}}
+```{{}}
 
 ## Checkout repository
 
-We then want the runner to download the repository, this can be done by using a github action named checkout or any other way that works. 
+We then want the runner to download the repository, this can be done by for example by using the predefined checkout action. This requires a few extra things to be set up, namely a personal access token providing write access to contents, and read access to secrets. The repository then needs to be set up with a repository secret, here named `ACTIONS_AUTH_TOKEN`{{}} containing the token. Other methods that work are obviously also fine.
 
-```bash
-cat >> tsunami.yml << EOF
+```yml
     steps:
       - name: Clone repository files
         uses: actions/checkout@v5
         with:
           token: ${{ secrets.ACTIONS_AUTH_TOKEN }}
-
-EOF
-```{{exec}}
+```{{}}
 
 ## Download and configure web server
 
-Then we want to setup the web server. For this we manually run docker to setup our dockerfile.
+Then we want to setup the web server. For this we manually run docker to setup our dockerfile like we have done previously within this tutorial. 
 
-```bash
-cat >> tsunami.yml << EOF
+```yml
       - name: Web server setup
         shell: bash
         run: | 
           docker build -t webserver -f webserver.Dockerfile .
           docker run -dit --name webserver -p 8080:80 webserver
-
-EOF
-```{{exec}}
+```{{}}
 
 ## Set up the tsunami container
 
-Then we need to set up the tsunami container with nmap, as it does not come included.
+Then we need to set up the tsunami container with nmap, as it does not come included, just like previously.
 
-```bash
-cat >> tsunami.yml << EOF
+```yml
       - name: Tsunami container setup
         shell: bash
         run: |
           docker run -di --name tsunami-con ghcr.io/google/tsunami-scanner-full:latest
           docker exec tsunami-con bash -c "apt-get update && apt-get install -y nmap"
-
-EOF
-```{{exec}}
+```{{}}
 
 ## Run tsunami
 
-Finally, with everything else set up, we configure the step that will run tsunami against the web server. Fundamnetally we use the same command as we showed previously within this tutorial. We redirect the output of this command to a file, and we then read the file to find if there are any vulnerabilities. The number of vulnerabilities found is extracted and shown in the output log. grep is then used again generate an appropriate status code so the runner succeeds when there are no vulnerabilities present, and fails when there are.
+Finally, with everything else set up, we configure the step that will run tsunami against the web server. Fundamnetally we use the same command as we showed previously within this tutorial. We redirect the output of this command to a file, and we then read the file to find if there are any vulnerabilities. The number of vulnerabilities found is extracted and shown in the output log. 
 
-```bash
-cat >> tsunami.yml << EOF
+grep is then used again generate an appropriate status code so the runner succeeds when there are no vulnerabilities present, and fails when there are.
+
+```yml
       - name: Execute tsunami on the web server
         shell: bash
         run: |
@@ -94,6 +89,6 @@ cat >> tsunami.yml << EOF
           echo "[INFO] Tsunami execution finished"
           cat output.txt | grep vulnerability
           grep -q "vulnerability: 0" output.txt
+```{{}}
 
-EOF
-```{{exec}}
+The same changes as discussed previously can also be made here, for example using more detectors or scanning more ports.
