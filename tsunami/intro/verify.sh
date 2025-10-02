@@ -1,4 +1,4 @@
-if [ ! -f /tmp/intro ]; then
+if [ -f /tmp/intro ]; then
     exit 1
 fi
 
