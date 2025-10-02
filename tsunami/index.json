@@ -36,7 +36,8 @@
       },
       {
         "title": "Integration With CI/CD",
-        "text": "step6/text.md"
+        "text": "step6/text.md",
+        "background": "step6/background.sh"
       }
     ],
     "finish": {
