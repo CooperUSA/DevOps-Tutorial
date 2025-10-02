@@ -1,15 +1,3 @@
-mkdir repo
-cp -r public-html repo/public-html
-cp httpd.conf repo
-cp webserver.Dockerfile repo
-mkdir repo/.github
-mkdir repo/.github/workflows
-cd repo
-git init
-git branch -m main
-
-
-cat > ./.github/workflows/tsunami.yml << EOF
 name: Check web server for vulnerability using tsunami
 
 on:
@@ -51,7 +39,3 @@ jobs:
           echo "[INFO] Tsunami execution finished"
           cat output.txt | grep vulnerability
           grep -q "vulnerability: 0" output.txt
-
-EOF
-
-
