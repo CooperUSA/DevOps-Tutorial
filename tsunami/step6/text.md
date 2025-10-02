@@ -27,7 +27,7 @@ We can see that a basic skeleton of the workflow is already present, with a name
 To make the action download tsunami, we add it as a service container. This will include the container within the current job. We do this using the code below. Click on it to add it to the workflow.
 
 ```bash
-cat >> ./.github/workflows/tsunami.yml << EOF
+cat >> tsunami.yml << EOF
     services:
       tsunami:
         image: ghcr.io/google/tsunami-scanner-full:latest
@@ -38,7 +38,7 @@ EOF
 ## Checkout repository
 
 ```bash
-cat >> ./.github/workflows/tsunami.yml << EOF
+cat >> tsunami.yml << EOF
     steps:
       - name: Clone repository files
         uses: actions/checkout@v5
@@ -51,7 +51,7 @@ EOF
 ## Download and configure web server
 
 ```bash
-cat >> ./.github/workflows/tsunami.yml << EOF
+cat >> tsunami.yml << EOF
       - name: Web server setup
         shell: bash
         run: | 
@@ -64,7 +64,7 @@ EOF
 ## Setup the tsunami container
 
 ```bash
-cat >> ./.github/workflows/tsunami.yml << EOF
+cat >> tsunami.yml << EOF
       - name: Tsunami container setup
         shell: bash
         run: |
@@ -77,7 +77,7 @@ EOF
 ## Run tsunami
 
 ```bash
-cat >> ./.github/workflows/tsunami.yml << EOF
+cat >> tsunami.yml << EOF
       - name: Execute tsunami on the web server
         shell: bash
         run: |
