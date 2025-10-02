@@ -7,6 +7,6 @@ It follows a hardcoded 2-step process when scanning a publicly exposed network e
 2. Vulnerability verification
     - **Vulnerability Verification Phase**: Tsunami executes the vulnerability verification plugins in parallel to verify certain vulnerabilities on the scan target based on the information gathered in the Reconnaissance step.
 
-Following diagram shows the overall workflow for a Tsunami scan.
+Following diagram shows the overall workflow for a Tsunami scan:
 
-![Tsunami Workflow]{./tsunami_workflow.svg}
+![Tsunami Workflow]{./tsunami_workflow.png}
