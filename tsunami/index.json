@@ -11,7 +11,8 @@
     "steps": [
       {
         "title": "What is Tsunami?",
-        "text": "step0/text.md"
+        "text": "step0/text.md",
+        "verify": "step0/verify.sh"
       },
       {
         "title": "Exploring the vulnerability",
