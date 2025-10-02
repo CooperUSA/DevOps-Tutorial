@@ -37,6 +37,8 @@ EOF
 
 ## Checkout repository
 
+We then want the runner to download the repository, this can be done by using a github action named checkout or any other way that works. 
+
 ```bash
 cat >> tsunami.yml << EOF
     steps:
@@ -50,6 +52,8 @@ EOF
 
 ## Download and configure web server
 
+Then we want to setup the web server. For this we manually run docker to setup our dockerfile.
+
 ```bash
 cat >> tsunami.yml << EOF
       - name: Web server setup
@@ -61,7 +65,9 @@ cat >> tsunami.yml << EOF
 EOF
 ```{{exec}}
 
-## Setup the tsunami container
+## Set up the tsunami container
+
+Then we need to set up the tsunami container with nmap, as it does not come included.
 
 ```bash
 cat >> tsunami.yml << EOF
@@ -75,6 +81,8 @@ EOF
 ```{{exec}}
 
 ## Run tsunami
+
+Finally, with everything else set up, we configure the step that will run tsunami against the web server. Fundamnetally we use the same command as we showed previously within this tutorial. We redirect the output of this command to a file, and we then read the file to find if there are any vulnerabilities. The number of vulnerabilities found is extracted and shown in the output log. grep is then used again generate an appropriate status code so the runner succeeds when there are no vulnerabilities present, and fails when there are.
 
 ```bash
 cat >> tsunami.yml << EOF
