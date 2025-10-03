@@ -1,7 +1,4 @@
-if [! -f /tmp/skip]; then
-  echo "Not skipping verification"
-else
-  echo "Skipping verification"
+if [ -f "/tmp/skip"]; then
   exit 0
 fi
 
