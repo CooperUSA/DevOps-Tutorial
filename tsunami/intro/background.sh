@@ -28,6 +28,35 @@ cat > ./public-html/index.html << EOF
 </head>
 <body>
     <h1> this is a very cool website </h1>
+
+    <p>
+        According to all known laws of aviation, there is no way a bee should be able to fly. <br>
+        Its wings are too small to get its fat little body off the ground. <br>
+        The bee, of course, flies anyway because bees don't care what humans think is impossible. <br>
+        Yellow, black. Yellow, black. Yellow, black. Yellow, black. <br>
+        Ooh, black and yellow! <br>
+        Let's shake it up a little. <br>
+        Barry! Breakfast is ready! <br>
+        Coming! <br>
+        Hang on a second. <br>
+        Hello? <br>
+        Barry? <br>
+        Adam? <br>
+        Can you believe this is happening? <br>
+        I can't. <br>
+        I'll pick you up. <br>
+        Looking sharp. <br>
+        Use the stairs, Your father paid good money for those. <br>
+        Sorry. I'm excited. <br>
+        Here's the graduate. <br>
+        We're very proud of you, son. <br>
+        A perfect report card, all B's. <br>
+        Very proud. <br>
+        Ma! I got a thing going here. <br>
+        You got lint on your fuzz. <br>
+        Ow! That's me!
+    </p>
+
 </body>
 </html>
 EOF
