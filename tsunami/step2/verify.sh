@@ -1,4 +1,4 @@
-if [ -f "/tmp/skip"]; then
+if [ -f "/tmp/skip" ]; then
   exit 0
 fi
 
