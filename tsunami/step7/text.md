@@ -8,6 +8,10 @@ on:
   push:
     branches:
       - main
+
+jobs: 
+  everything: 
+    runs-on: ubuntu-latest
 ```{{}}
 
 
