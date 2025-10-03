@@ -134,6 +134,23 @@ SSLRandomSeed connect builtin
 </IfModule>
 EOF
 
+cat << 'EOF' > /tmp/easter-egg
+         .-"""-.
+        /       \
+        \       /
+ .-"""-.-`.-.-.<  _
+/      _,-\ ()()_/:)
+\     / ,  `     `|
+ '-..-| \-.,___,  /
+       \ `-.__/  /
+        `-.__.
+EOF
+
+chmod +r /tmp/easter-egg
+echo "alias easter-egg='cat /tmp/easter-egg'" >> /root/.bashrc
+
+
+
 echo "[*] Files created. Building docker container"
 
 docker build -t webserver -f webserver.Dockerfile .
