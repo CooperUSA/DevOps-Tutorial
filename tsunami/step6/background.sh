@@ -43,7 +43,7 @@ jobs:
           docker run -di --name tsunami-con ghcr.io/google/tsunami-scanner-full:latest
           docker exec tsunami-con bash -c "apt-get update && apt-get install -y nmap"
 
-      - name: Execute tsunami on the web server
+      - name: Execute tsunami against the web server
         shell: bash
         run: |
           echo "[INFO] Running tsunami"

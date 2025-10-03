@@ -1,6 +1,8 @@
 
 ## Headers
 
+The first few lines of the file simply specify a name for the action, when it should run (in this case when pushing to main), and what infrastructure it should run on (latest ubuntu version).
+
 ```yml
 name: Check web server for vulnerability using tsunami
 
@@ -17,7 +19,7 @@ jobs:
 
 ## Download tsunami
 
-To make the runner download tsunami, we add it as a service container. This will include the container within the current job. We do this using the code below.
+Then to make the runner download tsunami, we add it as a service container. This will download the container to be used within the current action. We do this using the code below.
 
 ```yml
     services:
@@ -27,7 +29,7 @@ To make the runner download tsunami, we add it as a service container. This will
 
 ## Checkout repository
 
-We then want the runner to download the repository, this can be done by for example by using the predefined checkout action. This requires a few extra things to be set up, namely a personal access token providing write access to contents, and read access to secrets. The repository then needs to be set up with a repository secret, here named `ACTIONS_AUTH_TOKEN`{{}} containing the token. Other methods that work are obviously also fine.
+We then want the runner to download the repository, this can be done by for example by using the predefined checkout action. This requires a few extra things to be set up, namely a personal access token providing write access to contents, and read access to secrets. The repository then needs to be set up with a repository secret, here named `ACTIONS_AUTH_TOKEN`{{}} containing the previously configured personal access token token. Other methods that work are obviously also fine.
 
 ```yml
     steps:
@@ -39,7 +41,7 @@ We then want the runner to download the repository, this can be done by for exam
 
 ## Download and configure web server
 
-Then we want to setup the web server. For this we manually run docker to setup our dockerfile like we have done previously within this tutorial. 
+Then we want to setup the web server. For this we manually run docker to setup our dockerfile like we have done previously within this tutorial. This will obviously differ in case your infrastructure is set up in a different way, but this matches how we set things up previously in this tutorial.
 
 ```yml
       - name: Web server setup
@@ -68,7 +70,7 @@ Finally, with everything else set up, we configure the step that will run tsunam
 grep is then used again generate an appropriate status code so the runner succeeds when there are no vulnerabilities present, and fails when there are.
 
 ```yml
-      - name: Execute tsunami on the web server
+      - name: Execute tsunami against the web server
         shell: bash
         run: |
           echo "[INFO] Running tsunami"
