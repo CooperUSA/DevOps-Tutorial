@@ -29,7 +29,8 @@
       },
       {
         "title": "Updating to a Non-Vulnerable Version of the Server",
-        "text": "step4/text.md"
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
       },
       {
         "title": "Check the Vulnerability Again",
