@@ -29,7 +29,7 @@ jobs:
       - name: Clone repository files
         uses: actions/checkout@v5
         with:
-          token: ${{ secrets.ACTIONS_AUTH_TOKEN }}
+          token: \${{ secrets.ACTIONS_AUTH_TOKEN }}
 
       - name: Web server setup
         shell: bash
