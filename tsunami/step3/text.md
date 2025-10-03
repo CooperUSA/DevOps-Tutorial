@@ -1,7 +1,7 @@
 Now that we have a container, we can run Tsunami against our local network.  
 In this tutorial, we’ll only scan **port 8080**, since that’s the only service we’re interested in.
 
-With the command `tsunami --ip-v4-target=172.17.0.1 --port-ranges-target=8080 --detectors-include="ApacheHttpServerCVE202141773VulnDetector`{{}} we will tell Tsunami to
+With the command `tsunami --ip-v4-target=172.17.0.1 --port-ranges-target=8080 --detectors-include="ApacheHttpServerCVE202141773VulnDetector"`{{}} we will tell Tsunami to
 - `--ip-v4-target=172.17.0.1`{{}}: Target the ip address for our web server
 - `--port-ranges-target=8080`{{}}: Only scan port 8080 
 - `--detectors-include="ApacheHttpServerCVE202141773VulnDetector`{{}}: Only check for the vulnerability [CVE-2021-41773](https://www.cve.org/CVERecord?id=CVE-2021-41773)
@@ -42,5 +42,3 @@ This block of text is pretty much just stating the summary of the Tsunami scan, 
 - `Service fingerprinting phase (XXX.X ms) with 1 plugin(s)`{{}}: We used one plugin for our fingerprinting phase, which was **web_app_fingerprinter**. 
 - `Vuln detection phase (XXX.X ms) with 1 plugin(s)`{{}}: We used one plugin for our vulnerability detection phase, which was **apache_http_server_cve_2021_41773**.  
 - `# of detected vulnerability: 1.`{{}}: We detected 1 vulnerability.
-
-The result is also saved in a ***.report*** file in the `/tmp`{{}} directory of the docker container. However, we won't check it as there isn't much more to get out of the result.

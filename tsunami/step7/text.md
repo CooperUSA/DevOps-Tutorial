@@ -65,9 +65,9 @@ Then we need to set up the tsunami container with nmap, as it does not come incl
 
 ## Run tsunami
 
-Finally, with everything else set up, we configure the step that will run tsunami against the web server. Fundamnetally we use the same command as we showed previously within this tutorial. We redirect the output of this command to a file, and we then read the file to find if there are any vulnerabilities. The number of vulnerabilities found is extracted and shown in the output log. 
+Finally, with everything else set up, we configure the step that will run tsunami against the web server. Fundamentally we use the same command as we showed previously within this tutorial. We redirect the output of this command to a file, and we then read the file to find if there are any vulnerabilities. The number of vulnerabilities found is extracted and shown in the output log. 
 
-grep is then used again generate an appropriate status code so the runner succeeds when there are no vulnerabilities present, and fails when there are.
+The grep command is then used again generate an appropriate status code so the action succeeds when there are no vulnerabilities present, and fails when there are.
 
 ```yml
       - name: Execute tsunami against the web server
@@ -80,4 +80,4 @@ grep is then used again generate an appropriate status code so the runner succee
           grep -q "vulnerability: 0" output.txt
 ```{{}}
 
-The same changes as discussed previously can also be made here, for example using more detectors or scanning more ports.
+The same changes as discussed previously can also be made here, for example using more detectors or scanning more ports, but for the sake of consistency we retained the same configuration as previously within this tutorial.
