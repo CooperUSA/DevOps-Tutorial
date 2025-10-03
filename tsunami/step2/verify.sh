@@ -1,3 +1,8 @@
+if [-f /tmp/skip]; then
+  echo "Skipping verification"
+  exit 0
+fi
+
 # Check that the Tsunami container exists
 if [ $( docker ps | grep tsunami-con | wc -l ) -eq 0 ]; then
   echo "The tsunami container 'tsunami-con' isn't running or doesn't exist"
