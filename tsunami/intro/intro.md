@@ -12,53 +12,33 @@ Finally, we’ll show how Tsunami can be integrated into a CI/CD pipeline to aut
 ```
         Start
           |
-+---------v------------+ : Motivation
-|        Intro         | : Agenda
-+----------------------+ : ILO
++---------v------------+ 
+| Intro & Setup        |
+|  - Motivation        |
+|  - Agenda / ILO      |
+|  - Background        |
++----------------------+
           |
-+---------v------------+ : 
-|     Background       | : What is Tsunami?
-+----------------------+ : 
++---------v------------+
+| Tsunami Hands-On     |
+|  - Explore Vuln      |
+|  - Pull Image        |
+|  - Run & Analyze     |
++----------------------+
           |
-+---------v------------+ : 
-|    Exploring the     | : 
-|    Vulnerability     | : 
-+----------------------+ : 
++---------v------------+
+| Update server        |
+|  - Re-test           |
++----------------------+
           |
-+---------v------------+ : Pull the Tsunami image
-|  Setting up Tsunami  | : Start a container
-+----------------------+ : Ensure Containers are Running
-          |
-+---------v------------+ : 
-|   Running Tsunami    | : Tsunami Results
-+----------------------+ : 
-          |
-+---------v------------+ : 
-|    Updating to a     | :
-|    Non-Vulnerable    | :
-|      Version of      | :
-|      the Server      | :   
-+----------------------+ : 
-          |
-+---------v------------+ : 
-|      Check the       | :
-|    Vulnerability     | :
-|       Again          | :  
-+----------------------+ :
-          |
-+---------v------------+ : 
-|     Integration      | :
-|      With CI/CD      | : 
-+----------------------+ :  
-          |
-+---------v------------+ : 
-|  Breaking down the   | : 
-|      yml file        | : 
-+----------------------+ :
++---------v------------+
+| Integration with     |
+|      CI/CD           |
++----------------------+
           |
           v
          End
- ```
+```
 
 
 ## Intended Learning Outcomes
