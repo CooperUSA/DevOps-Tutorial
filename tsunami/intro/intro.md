@@ -9,6 +9,58 @@ We’ll then learn how to set up Tsunami and use it to scan the web server for v
 
 Finally, we’ll show how Tsunami can be integrated into a CI/CD pipeline to automatically run scans during builds or deployments.
 
+```
+        Start
+          |
++---------v------------+ : Motivation
+|        Intro         | : Agenda
++----------------------+ : ILO
+          |
++---------v------------+ : 
+|     Background       | : What is Tsunami?
++----------------------+ : 
+          |
++---------v------------+ : 
+|    Exploring the     | : 
+|    Vulnerability     | : 
++----------------------+ : 
+          |
++---------v------------+ : Pull the Tsunami image
+|  Setting up Tsunami  | : Start a container
++----------------------+ : Ensure Containers are Running
+          |
++---------v------------+ : 
+|   Running Tsunami    | : Tsunami Results
++----------------------+ : 
+          |
++---------v------------+ : 
+|    Updating to a     | :
+|    Non-Vulnerable    | :
+|      Version of      | :
+|      the Server      | :   
++----------------------+ : 
+          |
++---------v------------+ : 
+|      Check the       | :
+|    Vulnerability     | :
+|       Again          | :  
++----------------------+ :
+          |
++---------v------------+ : 
+|     Integration      | :
+|      With CI/CD      | : 
++----------------------+ :  
+          |
++---------v------------+ : 
+|  Breaking down the   | : 
+|      yml file        | : 
++----------------------+ :
+          |
+          v
+         End
+ ```
+
+
 ## Intended Learning Outcomes
 By the end of this tutorial, you will understand how to 
 - Detect and remediate web application vulnerabilities using the Tsunami Security Scanner. 

@@ -15,7 +15,7 @@
         "verify": "step0/verify.sh"
       },
       {
-        "title": "Exploring the vulnerability",
+        "title": "Exploring the Vulnerability",
         "text": "step1/text.md"
       },
       {
