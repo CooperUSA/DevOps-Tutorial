@@ -17,11 +17,11 @@ Finally, we’ll show how Tsunami can be integrated into a CI/CD pipeline to aut
 |  - Motivation       |
 |  - Agenda / ILO     |
 |  - Background       |
+|  - Explore Vuln     |
 +----------v----------+
            |
 +----------v----------+
 | Tsunami Hands-On    |
-|  - Explore Vuln     |
 |  - Pull Image       |
 |  - Run & Analyze    |
 +----------v----------+
