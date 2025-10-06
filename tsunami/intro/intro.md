@@ -10,34 +10,34 @@ We’ll then learn how to set up Tsunami and use it to scan the web server for v
 Finally, we’ll show how Tsunami can be integrated into a CI/CD pipeline to automatically run scans during builds or deployments.
 
 ```
-        Start
-          |
-+---------v------------+ 
-| Intro & Setup        |
-|  - Motivation        |
-|  - Agenda / ILO      |
-|  - Background        |
-+----------------------+
-          |
-+---------v------------+
-| Tsunami Hands-On     |
-|  - Explore Vuln      |
-|  - Pull Image        |
-|  - Run & Analyze     |
-+----------------------+
-          |
-+---------v------------+
-| Update server        |
-|  - Re-test           |
-+----------------------+
-          |
-+---------v------------+
-| Integration with     |
-|      CI/CD           |
-+----------------------+
-          |
-          v
-         End
+         Start
+           |
++----------v----------+ 
+| Intro & Setup       |
+|  - Motivation       |
+|  - Agenda / ILO     |
+|  - Background       |
++----------v----------+
+           |
++----------v----------+
+| Tsunami Hands-On    |
+|  - Explore Vuln     |
+|  - Pull Image       |
+|  - Run & Analyze    |
++----------v----------+
+           |
++----------v----------+
+| Update server       |
+|  - Re-test          |
++----------v----------+
+           |
++----------v----------+
+| Integration with    |
+|      CI/CD          |
++----------v----------+
+           |
+           v
+          End
 ```
 
 
