@@ -12,11 +12,11 @@ First, we want to pull the full image from GitHub Container Registry:
 docker pull ghcr.io/google/tsunami-scanner-full
 ```{{exec}}
 
-Now this will take about a minute, so while you're waiting you can enjoy Mario trying to reach the top of some random staircase.
+Now this will take about one minute, so while you're waiting you can enjoy Mario trying to reach the top of some random staircase.
 
 ![Mario](./mario.gif)
 
-Well he's never reaching the top, is he. Anyway, once the docker pull is done you can proceed with the next step.
+Well he's never reaching the top, is he. Anyways, once the docker pull is done you can proceed with the next step.
 
 ### Start a container   
 
